@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="com.cordova.plugin.Callnumber" version="0.0.1">
+    <name>Callnumber</name>
+    <description>Call number</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova, callnumber, dial</keywords>
+
+    <js-module src="www/Callnumber.js" name="Callnumber">
+        <clobbers target="Callnumber"/>
+    </js-module>
+
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Callnumber">
+                <param name="android-package" value="com.cordova.plugin.Callnumber"/>
+            </feature>
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.CALL_PRIVILEGED" />
+            <uses-permission android:name="android.permission.CALL_PHONE" />
+        </config-file>
+        <source-file src="src/Callnumber.java" target-dir="src/com/cordova/plugin" />
+    </platform>
+
+</plugin>
