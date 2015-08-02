@@ -22,7 +22,7 @@ public class Callnumber extends CordovaPlugin {
         if (action.equals("Call"))
         {
             try {
-                String toDial = "tel:" + args.getString(0);
+                String toDial = args.getString(0);
                 Intent callIntent = new Intent(Intent.ACTION_CALL, Uri.parse(toDial));
                 this.cordova.getActivity().startActivity(callIntent);
                 callbackContext.success();
